@@ -1,0 +1,129 @@
+/* Grundstile, die für beide Modi gelten */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Den Hintergrund auf ein subtileres Violett umstellen */
+body.dark-mode {
+    background: linear-gradient(135deg, rgba(34, 0, 51, 1) 0%, rgba(68, 0, 102, 1) 50%, rgba(72, 0, 122, 1) 100%);
+    color: white;
+}
+
+body.light-mode {
+    background-color: #f0f0f0;
+    color: black;
+}
+
+/* Header */
+header {
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2.5em;
+    margin: 0;
+}
+
+#toggle-mode {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #a64dff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#toggle-mode:hover {
+    background-color: #d4a1ff;
+}
+
+/* Navigation */
+nav {
+    background-color: rgba(51, 0, 102, 0.8);
+    padding: 15px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 20px;
+}
+
+nav ul li a {
+    color: #dcdcdc;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+nav ul li a:hover {
+    color: #ffffff;
+}
+
+/* Hauptinhalt */
+main {
+    padding: 40px;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+h2 {
+    color: #d4a1ff;
+    margin-bottom: 30px;
+}
+
+.table-container {
+    position: relative;
+}
+
+.action-buttons {
+    position: absolute;
+    right: 0;
+    top: -40px;
+}
+
+.action-buttons button {
+    padding: 10px 15px;
+    margin-left: 10px;
+    background-color: #a64dff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.action-buttons button:hover {
+    background-color: #d4a1ff;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: rgba(51, 0, 102, 0.8);
+}
+
+th, td {
+    padding: 12px 15px;
+    border: 1px solid #663399;
+    text-align: left;
+    color: white;
+}
+
+th {
+    background-color: #a64dff;
+}
+
+tbody tr:nth-child(even) {
+    background-color: rgba(102, 0, 153, 0.6);
+}
