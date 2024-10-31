@@ -1,6 +1,6 @@
 document.getElementById("add-grade").addEventListener("click", function () {
     // Popup-HTML laden
-    fetch('Frontend/popups/popup.html')
+    fetch('popups/popup.html')
         .then(response => response.text())
         .then(data => {
             document.getElementById('popup-container').innerHTML = data;
@@ -23,9 +23,27 @@ document.getElementById("add-grade").addEventListener("click", function () {
                     setTimeout(() => popup.style.display = "none", 300);
                 }
             });
+            // Event-Listener für "Neue Lehrperson hinzufügen" und "Bestehende Lehrperson wählen"
+            document.getElementById("popup-container").addEventListener("click", function (event) {
+                if (event.target.id === "add-new-teacher") {
+                    // Dropdown ausblenden und Eingabefeld für neue Lehrperson anzeigen
+                    document.getElementById("teacher").style.display = "none";
+                    document.getElementById("new-teacher").style.display = "block";
+                    document.getElementById("add-new-teacher").style.display = "none";
+                    document.getElementById("choose-existing-teacher").style.display = "inline";
+                }
+
+                if (event.target.id === "choose-existing-teacher") {
+                    // Eingabefeld ausblenden und Dropdown für bestehende Lehrperson anzeigen
+                    document.getElementById("new-teacher").style.display = "none";
+                    document.getElementById("teacher").style.display = "block";
+                    document.getElementById("add-new-teacher").style.display = "inline";
+                    document.getElementById("choose-existing-teacher").style.display = "none";
+                }
+            });
 
             // Event-Listener für das Hinzufügen der Note zur Tabelle
-            document.getElementById('grade-form').addEventListener('submit', function(event) {
+            document.getElementById('grade-form').addEventListener('submit', function (event) {
                 event.preventDefault(); // Verhindert das Neuladen der Seite
 
                 // Eingaben aus dem Formular abrufen

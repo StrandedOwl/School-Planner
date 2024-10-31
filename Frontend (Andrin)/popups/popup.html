@@ -4,10 +4,20 @@
         <h2>Neue Note hinzufügen</h2>
         <form id="grade-form">
             <label for="teacher">Lehrer:</label>
-            <select id="teacher" name="teacher">
-                <option value="Herr Meier">Herr Meier</option>
-                <option value="Frau Müller">Frau Müller</option>
-            </select>
+            
+            <!-- Container zum Wechseln zwischen Dropdown und Eingabefeld -->
+            <div id="teacher-selection">
+                <select id="teacher" name="teacher">
+                    <option value="Herr Meier">Herr Meier</option>
+                    <option value="Frau Müller">Frau Müller</option>
+                </select>
+                <input type="text" id="new-teacher" name="new-teacher" placeholder="Neue Lehrperson" style="display: none;">
+            </div>
+
+            <div id="teacher-buttons">
+                <button type="button" id="add-new-teacher">Neue Lehrperson hinzufügen</button>
+                <button type="button" id="choose-existing-teacher" style="display: none;">Bestehende Lehrperson wählen</button>
+            </div>
 
             <label for="subject">Fach:</label>
             <select id="subject" name="subject">
