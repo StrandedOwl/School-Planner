@@ -5,14 +5,14 @@ body {
     padding: 0;
 }
 
-/* Den Hintergrund auf ein subtileres Violett umstellen */
+/* Dunkel- und Hellmodus */
 body.dark-mode {
-    background: linear-gradient(135deg, rgba(34, 0, 51, 1) 0%, rgba(68, 0, 102, 1) 50%, rgba(72, 0, 122, 1) 100%);
+    background-color: #2e2e2e; /* Dunkelgrau für Dunkelmodus */
     color: white;
 }
 
 body.light-mode {
-    background-color: #f0f0f0;
+    background-color: #ffffff; /* Weiß für Hellmodus */
     color: black;
 }
 
@@ -26,26 +26,39 @@ header {
 header h1 {
     font-size: 2.5em;
     margin: 0;
+    color: white;
 }
 
-#toggle-mode {
+#toggle-mode, #login-btn {
     margin-top: 10px;
     padding: 10px 20px;
-    background-color: #a64dff;
+    background-color: #4CAF50;
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    font-size: 1em;
 }
 
-#toggle-mode:hover {
-    background-color: #d4a1ff;
+#toggle-mode:hover, #login-btn:hover {
+    background-color: #45a049;
+}
+
+/* Positionierung Login-Button oben rechts */
+#login-btn {
+    position: absolute;
+    right: 10px;
+    top: 20px;
 }
 
 /* Navigation */
 nav {
-    background-color: rgba(51, 0, 102, 0.8);
+    background-color: #f8f8f8; /* Hellgrau für Hellmodus */
     padding: 15px;
+}
+
+body.dark-mode nav {
+    background-color: #333333; /* Dunkelgrau für Dunkelmodus */
 }
 
 nav ul {
@@ -61,27 +74,40 @@ nav ul li {
 }
 
 nav ul li a {
-    color: #dcdcdc;
+    color: #333;
     text-decoration: none;
     font-weight: bold;
     font-size: 1.2em;
 }
 
+body.dark-mode nav ul li a {
+    color: #dcdcdc; /* Helle Farbe für Dunkelmodus */
+}
+
 nav ul li a:hover {
-    color: #ffffff;
+    color: #4CAF50; /* Grünton beim Hover */
 }
 
 /* Hauptinhalt */
 main {
     padding: 40px;
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: #ffffff; /* Hellgrau für Hellmodus */
+    box-shadow: inset 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+body.dark-mode main {
+    background-color: #3a3a3a; /* Dunkelgrau für Dunkelmodus */
 }
 
 h2 {
-    color: #d4a1ff;
-    margin-bottom: 30px;
+    color: #333;
 }
 
+body.dark-mode h2 {
+    color: #d4a1ff;
+}
+
+/* Tabelle und Buttons */
 .table-container {
     position: relative;
 }
@@ -95,7 +121,7 @@ h2 {
 .action-buttons button {
     padding: 10px 15px;
     margin-left: 10px;
-    background-color: #a64dff;
+    background-color: #4CAF50;
     color: white;
     border: none;
     border-radius: 5px;
@@ -103,27 +129,46 @@ h2 {
 }
 
 .action-buttons button:hover {
-    background-color: #d4a1ff;
+    background-color: #45a049;
 }
 
+/* Tabelle */
 table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 20px;
-    background-color: rgba(51, 0, 102, 0.8);
+    background-color: #ffffff; /* Hell für Hellmodus */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+body.dark-mode table {
+    background-color: #3a3a3a; /* Dunkelgrau für Dunkelmodus */
 }
 
 th, td {
     padding: 12px 15px;
-    border: 1px solid #663399;
+    border: 1px solid #ddd;
     text-align: left;
+}
+
+body.dark-mode th, body.dark-mode td {
+    border: 1px solid #555;
     color: white;
 }
 
 th {
-    background-color: #a64dff;
+    background-color: #f2f2f2;
+    color: #333;
+}
+
+body.dark-mode th {
+    background-color: #555;
 }
 
 tbody tr:nth-child(even) {
-    background-color: rgba(102, 0, 153, 0.6);
+    background-color: #f9f9f9;
+}
+
+body.dark-mode tbody tr:nth-child(even) {
+    background-color: #444;
 }
