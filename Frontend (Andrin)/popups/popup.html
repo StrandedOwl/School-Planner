@@ -5,26 +5,27 @@
         <form id="grade-form">
             <label for="teacher">Lehrer:</label>
             
-            <!-- Container zum Wechseln zwischen Dropdown und Eingabefeld -->
             <div id="teacher-selection">
                 <select id="teacher" name="teacher">
                     <option value="Herr Meier">Herr Meier</option>
                     <option value="Frau Müller">Frau Müller</option>
                 </select>
                 <input type="text" id="new-teacher" name="new-teacher" placeholder="Neue Lehrperson" style="display: none;">
+                <button type="button" id="toggle-teacher" class="toggle-button">+</button>
             </div>
-
-            <div id="teacher-buttons">
-                <button type="button" id="add-new-teacher">Neue Lehrperson hinzufügen</button>
-                <button type="button" id="choose-existing-teacher" style="display: none;">Bestehende Lehrperson wählen</button>
-            </div>
-
+            
             <label for="subject">Fach:</label>
-            <select id="subject" name="subject">
-                <option value="Mathematik">Mathematik</option>
-                <option value="Englisch">Englisch</option>
-                <option value="Geschichte">Geschichte</option>
-            </select>
+
+            <div id="subject-selection">
+                <select id="subject" name="subject">
+                    <option value="Mathematik">Mathematik</option>
+                    <option value="Englisch">Englisch</option>
+                    <option value="Geschichte">Geschichte</option>
+                </select>
+                <input type="text" id="new-subject" name="new-subject" placeholder="Neues Fach" style="display: none;">
+                <button type="button" id="toggle-subject" class="toggle-button">+</button>
+            </div>
+            
 
             <label for="grade">Note:</label>
             <input type="number" id="grade" name="grade" min="1" max="6" step="0.001" required>
