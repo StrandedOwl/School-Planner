@@ -1,8 +1,7 @@
 CREATE TABLE teachers (
     teacher_id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
     first_name VARCHAR(50) NOT NULL,
-    last_name VARCHAR(50) NOT NULL,
-    subject_id INT NOT NULL
+    last_name VARCHAR(50) NOT NULL
 );
 
 CREATE TABLE classes (
@@ -23,9 +22,23 @@ CREATE TABLE students (
 
 CREATE TABLE subjects (
     subject_id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
-    subject_name VARCHAR(50) NOT NULL,
+    subject_name VARCHAR(50) NOT NULL
+);
+
+CREATE TABLE class_subjects (
     class_id INT NOT NULL,
-    FOREIGN KEY (class_id) REFERENCES classes(class_id)
+    subject_id INT NOT NULL,
+    PRIMARY KEY (class_id, subject_id),
+    FOREIGN KEY (class_id) REFERENCES classes(class_id),
+    FOREIGN KEY (subject_id) REFERENCES subjects(subject_id)
+);
+
+CREATE TABLE teacher_subjects (
+    teacher_id INT NOT NULL,
+    subject_id INT NOT NULL,
+    PRIMARY KEY (teacher_id, subject_id),
+    FOREIGN KEY (teacher_id) REFERENCES teachers(teacher_id),
+    FOREIGN KEY (subject_id) REFERENCES subjects(subject_id)
 );
 
 CREATE TABLE grades (
