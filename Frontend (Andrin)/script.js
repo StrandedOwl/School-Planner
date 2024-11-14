@@ -19,27 +19,50 @@ document.getElementById("add-grade").addEventListener("click", function () {
                     setTimeout(() => popup.style.display = "none", 300);
                 }
             });
-            document.getElementById("popup-container").addEventListener("click", function (event) {
-                if (event.target.id === "add-new-teacher") {
-                    document.getElementById("teacher").style.display = "none";
-                    document.getElementById("new-teacher").style.display = "block";
-                    document.getElementById("add-new-teacher").style.display = "none";
-                    document.getElementById("choose-existing-teacher").style.display = "inline";
-                }
 
-                if (event.target.id === "choose-existing-teacher") {
-                    document.getElementById("new-teacher").style.display = "none";
-                    document.getElementById("teacher").style.display = "block";
-                    document.getElementById("add-new-teacher").style.display = "inline";
-                    document.getElementById("choose-existing-teacher").style.display = "none";
+            // Umschalten zwischen Dropdown und Eingabefeld für Lehrer
+            const teacherToggleButton = document.getElementById("toggle-teacher");
+            teacherToggleButton.addEventListener("click", function () {
+                const teacherSelect = document.getElementById("teacher");
+                const newTeacherInput = document.getElementById("new-teacher");
+                
+                if (teacherSelect.style.display !== "none") {
+                    teacherSelect.style.display = "none";
+                    newTeacherInput.style.display = "block";
+                    teacherToggleButton.textContent = "-";
+                    teacherToggleButton.classList.add("active"); // Klasse hinzufügen
+                } else {
+                    teacherSelect.style.display = "block";
+                    newTeacherInput.style.display = "none";
+                    teacherToggleButton.textContent = "+";
+                    teacherToggleButton.classList.remove("active"); // Klasse entfernen
+                }
+            });
+
+            // Umschalten zwischen Dropdown und Eingabefeld für Fach
+            const subjectToggleButton = document.getElementById("toggle-subject");
+            subjectToggleButton.addEventListener("click", function () {
+                const subjectSelect = document.getElementById("subject");
+                const newSubjectInput = document.getElementById("new-subject");
+
+                if (subjectSelect.style.display !== "none") {
+                    subjectSelect.style.display = "none";
+                    newSubjectInput.style.display = "block";
+                    subjectToggleButton.textContent = "-";
+                    subjectToggleButton.classList.add("active"); // Klasse hinzufügen
+                } else {
+                    subjectSelect.style.display = "block";
+                    newSubjectInput.style.display = "none";
+                    subjectToggleButton.textContent = "+";
+                    subjectToggleButton.classList.remove("active"); // Klasse entfernen
                 }
             });
 
             document.getElementById('grade-form').addEventListener('submit', function (event) {
-                event.preventDefault(); // Verhindert das Neuladen der Seite
+                event.preventDefault();
 
-                const teacher = document.getElementById('teacher').value;
-                const subject = document.getElementById('subject').value;
+                const teacher = document.getElementById('teacher').value || document.getElementById('new-teacher').value;
+                const subject = document.getElementById('subject').value || document.getElementById('new-subject').value;
                 const grade = document.getElementById('grade').value;
 
                 const tableBody = document.querySelector('table tbody');

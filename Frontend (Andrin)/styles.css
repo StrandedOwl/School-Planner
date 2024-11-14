@@ -172,3 +172,32 @@ tbody tr:nth-child(even) {
 body.dark-mode tbody tr:nth-child(even) {
     background-color: #444;
 }
+
+.icon-buttons {
+    position: absolute;
+    top: 20px;
+    right: 10px;
+    display: flex;
+    gap: 15px; /* Abstand zwischen den Icons */
+}
+
+.icon-buttons .icon {
+    width: 40px; /* Größere Breite für bessere Sichtbarkeit */
+    height: 40px;
+    padding: 8px; /* Innenabstand für mehr Sichtbarkeit */
+    background-color: #4CAF50; /* Hellerer Hintergrund für gute Sichtbarkeit */
+    border-radius: 8px; /* Abgerundete Ecken für ein modernes Aussehen */
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+.icon-buttons .icon:hover {
+    background-color: #45a049; /* Helleres Grün beim Hover */
+    transform: scale(1.1); /* Leichte Vergrößerung beim Hover */
+}
+
+.icon-buttons .icon img {
+    width: 100%; /* SVG passt sich der Icon-Größe an */
+    height: 100%;
+    display: block;
+}
