@@ -203,7 +203,7 @@ body.dark-mode .popup-content select {
 #teacher-selection input, #subject-selection input {
     flex: 1;
     padding: 8px;
-    margin: 0; /* Kein zusätzlicher Rand um die Felder */
+    margin: 0;
 }
 
 #teacher-selection .toggle-button, #subject-selection .toggle-button {
@@ -214,9 +214,8 @@ body.dark-mode .popup-content select {
     display: flex;
     align-items: center;
     justify-content: center;
-    /* Vertikale Ausrichtung feinabstimmen */
     position: relative;
-    top: -2px; /* Schiebt den Button leicht nach oben */
+    top: -2px;
 }
 
 .toggle-button.active {
