@@ -115,7 +115,110 @@ body.dark-mode .popup-content select {
     background-color: #45a049;
 }
 
-#teacher-buttons button {
-    margin-top: 10px;
-    margin-right: 5px;
+/* Styling für Toggle-Buttons */
+.toggle-button {
+    background-color: transparent;
+    border: 1px solid #4CAF50;
+    color: #4CAF50;
+    font-size: 1.2em;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.toggle-button:hover {
+    background-color: #4CAF50;
+    color: white;
+}
+
+/* Spezifischer Toggle-Button-Stil */
+#teacher-selection .toggle-button, #subject-selection .toggle-button {
+    background-color: transparent;
+    border: 1px solid #4CAF50;
+    color: #4CAF50;
+    font-size: 1.2em;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+#teacher-selection .toggle-button:hover, #subject-selection .toggle-button:hover {
+    background-color: #4CAF50;
+    color: white;
+}
+
+
+#teacher-selection, #subject-selection {
+    display: flex;
+    align-items: center;
+}
+
+#teacher-selection select, #subject-selection select,
+#teacher-selection input, #subject-selection input {
+    flex: 1;
+}
+
+#teacher-selection .toggle-button, #subject-selection .toggle-button {
+    margin-left: 10px;
+}
+
+
+#teacher-selection, #subject-selection {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px; /* Abstand nach unten für besseren Look */
+}
+
+#teacher-selection select, #subject-selection select,
+#teacher-selection input, #subject-selection input {
+    flex: 1;
+    padding: 8px; /* Einheitlicheres Padding */
+}
+
+#teacher-selection .toggle-button, #subject-selection .toggle-button {
+    margin-left: 12px; /* Mehr Abstand zwischen Dropdown und + */
+    width: 36px;
+    height: 36px;
+    font-size: 1.2em;
+}
+
+
+#teacher-selection, #subject-selection {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+#teacher-selection select, #subject-selection select,
+#teacher-selection input, #subject-selection input {
+    flex: 1;
+    padding: 8px;
+    margin: 0;
+}
+
+#teacher-selection .toggle-button, #subject-selection .toggle-button {
+    margin-left: 10px;
+    width: 36px;
+    height: 36px;
+    font-size: 1.2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    top: -2px;
+}
+
+.toggle-button.active {
+    background-color: #4CAF50;
+    color: white;
 }
