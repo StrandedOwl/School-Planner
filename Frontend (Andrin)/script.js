@@ -115,3 +115,26 @@ function showLoginForm() {
     document.getElementById('register-form').style.display = 'none';
     document.getElementById('login-form').style.display = 'block';
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+    const darkModeIcon = document.getElementById("darkmode-icon");
+    const body = document.body;
+
+    // Prüfen, ob Dark Mode im localStorage gespeichert ist
+    if (localStorage.getItem("darkMode") === "enabled") {
+        body.classList.add("dark-mode");
+    } else {
+        body.classList.remove("dark-mode");
+    }
+
+    // Event Listener für das Icon
+    darkModeIcon.addEventListener("click", () => {
+        if (body.classList.contains("dark-mode")) {
+            body.classList.remove("dark-mode");
+            localStorage.setItem("darkMode", "disabled");
+        } else {
+            body.classList.add("dark-mode");
+            localStorage.setItem("darkMode", "enabled");
+        }
+    });
+});
