@@ -81,3 +81,60 @@ document.getElementById("add-grade").addEventListener("click", function () {
             });
         });
 });
+
+document.getElementById("login-icon").addEventListener("click", function () {
+    fetch('popups/login_register.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('popup-container').innerHTML = data;
+            const popup = document.getElementById("note-popup");
+            popup.style.display = "flex";
+            popup.classList.add("show");
+
+            document.querySelector(".close").addEventListener("click", function () {
+                popup.style.display = "none";
+                popup.classList.remove("show");
+            });
+        });
+});
+
+
+// Funktion zum Schließen des Popups
+function closePopup() {
+    document.getElementById('popup').style.display = 'none';
+}
+
+// Funktion zum Anzeigen des Registrierungsformulars und Verstecken des Login-Formulars
+function showRegisterForm() {
+    document.getElementById('login-form').style.display = 'none';
+    document.getElementById('register-form').style.display = 'block';
+}
+
+// Funktion zum Anzeigen des Login-Formulars und Verstecken des Registrierungsformulars
+function showLoginForm() {
+    document.getElementById('register-form').style.display = 'none';
+    document.getElementById('login-form').style.display = 'block';
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    const darkModeIcon = document.getElementById("darkmode-icon");
+    const body = document.body;
+
+    // Prüfen, ob Dark Mode im localStorage gespeichert ist
+    if (localStorage.getItem("darkMode") === "enabled") {
+        body.classList.add("dark-mode");
+    } else {
+        body.classList.remove("dark-mode");
+    }
+
+    // Event Listener für das Icon
+    darkModeIcon.addEventListener("click", () => {
+        if (body.classList.contains("dark-mode")) {
+            body.classList.remove("dark-mode");
+            localStorage.setItem("darkMode", "disabled");
+        } else {
+            body.classList.add("dark-mode");
+            localStorage.setItem("darkMode", "enabled");
+        }
+    });
+});
