@@ -29,21 +29,40 @@
             </div>
 
             <!-- Registrierungs-Formular -->
-            <div id="register-form" style="display: none;">
-                <h2>Registrierung</h2>
-                <form>
-                    <label for="new-username">Benutzername:</label>
-                    <input type="text" id="new-username" name="username" required>
+<div id="register-form" style="display: none;">
+    <h2>Registrierung</h2>
+    <form>
+        <label for="new-username">Benutzername:</label>
+        <input type="text" id="new-username" name="username" required>
 
-                    <label for="email">E-Mail:</label>
-                    <input type="email" id="email" name="email" required>
+        <label for="email">E-Mail:</label>
+        <input type="email" id="email" name="email" required>
 
-                    <label for="new-password">Passwort:</label>
-                    <input type="password" id="new-password" name="password" required>
+        <label for="new-password">Passwort:</label>
+        <input type="password" id="new-password" name="password" required>
 
-                    <button type="submit">Registrieren</button>
-                </form>
-                <p>Schon ein Konto? <a href="#" onclick="showLoginForm()">Einloggen</a></p>
+        <div>
+            <label>Wähle deine Rolle:</label>
+            <div class="role-selection">
+                <input type="radio" id="role-teacher" name="role" value="teacher" required>
+                <label for="role-teacher" class="role-option">
+                    <img src="/Frontend (Andrin)/images/lehrer.svg" alt="Lehrer" width="50" />
+                    Lehrer
+                </label>
+
+                <input type="radio" id="role-student" name="role" value="student" required>
+                <label for="role-student" class="role-option">
+                    <img src="/Frontend (Andrin)/images/schuler.svg" alt="Schüler" width="50" />
+                    Schüler
+                </label>
+            </div>
+        </div>
+
+        <button type="submit">Registrieren</button>
+    </form>
+    <p>Schon ein Konto? <a href="#" onclick="showLoginForm()">Einloggen</a></p>
+</div>
+
             </div>
         </div>
     </div>

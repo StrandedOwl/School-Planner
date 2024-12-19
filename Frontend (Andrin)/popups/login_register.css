@@ -98,3 +98,19 @@ a:hover {
     color: #45a049; /* Etwas dunkleres Grün beim Hovern */
     text-decoration: underline; /* Unterstreichung beim Hovern */
 }
+
+.role-selection {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin: 10px 0;
+}
+
+.role-option {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    padding: 10px;
+    border: 2px solid transparent;
+}
